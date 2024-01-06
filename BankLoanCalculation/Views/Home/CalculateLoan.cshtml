@@ -1,0 +1,76 @@
+﻿@model IEnumerable<BankLoanCalculation.Models.CalculatedLoanViewModel>
+
+@{
+    ViewData["Title"] = "Tính Toán Trả Nợ Bank";
+}
+
+<h1>Tính Toán Trả Nợ Bank</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ngày Thanh Toán
+            </th>
+            <th>
+                Dư Nợ Cũ
+            </th>
+            <th>
+                Lãi Vay
+            </th>
+            <th>
+                Trả Gốc
+            </th>
+            <th>
+                Tổng Trả Hằng Tháng
+            </th>
+            <th>
+                Trả Gốc Thêm
+            </th>
+            <th>
+                Phí Trả Gốc Thêm
+            </th>
+            <th>
+                Tổng Gốc Trả
+            </th>
+            <th>
+                Dư Nợ Mới
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BeforePaidLoan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InterestPaymentAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DefaultLoanPaymentAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalDefaultPaymentAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdditionalPaymentAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdditionalPaymentFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalLoanPayment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AfterPaidLoan)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

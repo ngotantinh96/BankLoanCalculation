@@ -1,0 +1,44 @@
+﻿@model BankLoanCalculation.Models.LoanCalculatorModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            @using (Html.BeginForm("CalculateLoan", "Home", FormMethod.Post))
+            {
+                <div class="form-group text-start mb-2">
+                    <label asp-for="LoanAmount" class="control-label"></label>
+                    <input asp-for="LoanAmount" class="form-control" />
+                    <span asp-validation-for="LoanAmount" class="text-danger"></span>
+                </div>
+                <div class="form-group text-start mb-2">
+                    <label asp-for="NextPaymentDate" class="control-label"></label>
+                    <input asp-for="NextPaymentDate" class="form-control" />
+                    <span asp-validation-for="NextPaymentDate" class="text-danger"></span>
+                </div>
+                <div class="form-group text-start mb-2">
+                    <label asp-for="InterestRate" class="control-label"></label>
+                    <input asp-for="InterestRate" class="form-control" />
+                    <span asp-validation-for="InterestRate" class="text-danger"></span>
+                </div>
+                <div class="form-group text-start mb-2">
+                    <label asp-for="PaymentAmount" class="control-label"></label>
+                    <input asp-for="PaymentAmount" class="form-control" />
+                    <span asp-validation-for="PaymentAmount" class="text-danger"></span>
+                </div>
+                <div class="form-group text-start mb-2">
+                    @Html.CheckBoxFor(model => model.Include13thMonthSalary)
+                    <label asp-for="Include13thMonthSalary" class="control-label"></label>
+                    <span asp-validation-for="Include13thMonthSalary" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
