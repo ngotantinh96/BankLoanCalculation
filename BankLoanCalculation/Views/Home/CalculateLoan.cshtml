@@ -36,6 +36,9 @@
             <th>
                 Dư Nợ Mới
             </th>
+             <th>
+                Tổng Lãi và Phí Phát Sinh
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -69,6 +72,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AfterPaidLoan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAdditionalFee)
                 </td>
             </tr>
         }

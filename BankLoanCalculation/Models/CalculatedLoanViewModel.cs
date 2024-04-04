@@ -22,5 +22,7 @@ namespace BankLoanCalculation.Models
         public decimal BeforePaidLoan { get; set; }
         [DisplayFormat(DataFormatString = "{0:#,### VND}")]
         public decimal AfterPaidLoan { get; set; }
+        [DisplayFormat(DataFormatString = "{0:#,### VND}")]
+        public decimal TotalAdditionalFee { get; set; }
     }
 }
